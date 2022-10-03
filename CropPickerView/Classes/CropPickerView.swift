@@ -473,7 +473,11 @@ public class CropPickerView: UIView {
             self.cropTrailingConstraint?.constant = trailing
             self.cropTopConstraint?.constant = top
             self.cropBottomConstraint?.constant = bottom
-            self.dimLayerMask(0.0, animated: false)
+            
+            UIView.animate(withDuration: 1.0) {
+                self.dimLayerMask(1.0, animated: true)
+                self.layoutIfNeeded()
+            }
         }
     }
 
